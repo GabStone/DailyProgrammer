@@ -1,0 +1,26 @@
+// DailyProgrammer #354
+// https://www.reddit.com/r/dailyprogrammer/comments/83uvey/20180312_challenge_354_easy_integer_complexity_1/
+// @author GabStone
+
+package main
+
+import "fmt"
+
+func main() {
+	// Given Input
+	number_a := 456
+	
+	number_b := 1
+	number_c := number_a
+	
+	for i := 1; i < number_a; i++ {
+		if number_a%i == 0 {
+			if i + number_a / i <= number_b + number_c {
+				number_b = i
+				number_c = number_a / i
+			}
+		}
+	}
+	
+	fmt.Println(number_b + number_c)
+}
